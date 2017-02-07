@@ -10,19 +10,19 @@ var getElementsByClassName = function(className, node) {
   node = node || document.body; 
 
   // develop base case conditional flag - parent
-  if(node.classList) { //checks if ClassList exists
-    if(node.classList.contains(className)) { //if classList has className
-        results.push(node); // if matched, push to storage results
+  if (node.classList) { //checks if ClassList exists
+    if (node.classList.contains(className)) { //if classList has className
+      results.push(node); // if matched, push to storage results
     }
   }
 
   // recursively call on children
-  for(var i=0; i<node.children.length; i++) {
+  for (var i = 0; i < node.children.length; i++) {
     var childList = getElementsByClassName(className, node.children[i]);
     results = results.concat(childList);
   }
 
 // return results 
-    return results;
+  return results;
 
 };

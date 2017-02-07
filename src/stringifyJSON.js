@@ -18,7 +18,7 @@ var stringifyJSON = function(obj) {
       return '[' + results.join(',') + ']';
     }
   }
-  
+
 //object case
   if ( obj && typeof obj === 'object') {
     var results = [];
@@ -37,6 +37,7 @@ var stringifyJSON = function(obj) {
     return '"' + obj + '"';
   }
 
+  // type coercion for numbers, booleans, null
   return '' + obj;
 
 };
